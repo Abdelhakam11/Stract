@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% set title = 'Home' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                {% include 'component/card.html' %}
+                {{ cards.mainCard({type: 'text', name: 'name'}) }}
+                {{ cards.mainCard({type: 'number', name: 'phone'}) }}
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h1>{{ welcome.title }}</h1>
+            <p>{{ welcome.description }}</p>
+        </div>
+    </section>
+
+    <h1>{{ dataAr.title }}</h1>
+    <h1>{{ dataEn.title }}</h1>
+    <h1>{{ homeDataAr.title }}</h1>
+    
+    
+{% endblock content %}
