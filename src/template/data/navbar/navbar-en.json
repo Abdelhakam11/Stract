@@ -1,0 +1,11 @@
+{
+  "navDataEn": {
+    "items": [
+      { "name": "Home", "link": "#" },
+      { "name": "Service", "link": "#" },
+      { "name": "Resources", "link": "#" },
+      { "name": "About us", "link": "#" }
+    ],
+    "btn": { "name": "Contact us", "link": "#" }
+  }
+}

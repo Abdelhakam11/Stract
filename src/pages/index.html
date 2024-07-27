@@ -1,29 +1,332 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% set title = 'Home' %} {% block content %}
 
-{% set title = 'Home' %}
-
-{% block content %}
-
+<section>
+  <div class="header-container overflow-hidden container-fluid">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                {% include 'component/card.html' %}
-                {{ cards.mainCard({type: 'text', name: 'name'}) }}
-                {{ cards.mainCard({type: 'number', name: 'phone'}) }}
-            </div>
+      <div class="d-flex flex-column align-items-center">
+        <h1
+          class="header-container--title d-flex flex-column align-items-center"
+        >
+          <span class="animated swing">
+            <span class="header-container--title--marker"
+              >{{headerDataEn.title.part1.marker}}</span
+            >
+            {{headerDataEn.title.part1.main}}
+          </span>
+          <span class="animated bounceInRight">
+            {{headerDataEn.title.part2.main}}
+            <span class="header-container--title--marker"
+              >{{headerDataEn.title.part2.marker}}</span
+            >
+          </span>
+        </h1>
+
+        <p class="header-container--info animated fadeIn">
+          {{headerDataEn.info}}
+        </p>
+        <a
+          href="{{headerDataEn.btn.link}}"
+          class="btn header-container--btn delay animated fadeIn"
+        >
+          {{headerDataEn.btn.name}}
+        </a>
+      </div>
+      <div class="row justify-content-center animated delay fadeIn">
+        <div class="col-sm-10 col-12">
+          <div class="header-container--dashboard-box">
+            <img src="../../assets/images/main/dashboard.png" alt="dashboard" />
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <section class="section">
+<section>
+  <div class="container">
+    <div class="users-container d-flex flex-column">
+      <h1 class="users-container--title">
+        {{ homeDataEn.users.title.main }}
+        <span class="users-container--title--marker animated delay fadeIn">
+          {{ homeDataEn.users.title.marker }} </span
+        >.
+      </h1>
+      <div
+        class="users-container--list d-flex justify-content-center align-items-center flex-wrap"
+      >
+        {% for i in range(1, 6) %}
+        <img src="../assets/images/users/user-{{ i }}.png" alt="user-logo" />
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="services-container d-flex flex-column align-items-center">
+      <div class="d-flex flex-column align-items-center">
+        <h1
+          class="services-container--title d-flex flex-column align-items-center text-center"
+        >
+          <span> {{ homeDataEn.services.title.main }} </span>
+          <span class="services-container--title--marker animated delay fadeIn">
+            {{ homeDataEn.services.title.marker }}
+          </span>
+        </h1>
+        <p class="services-container--info text-center">
+          {{ homeDataEn.services.info }}
+        </p>
+      </div>
+      <div class="services-container--list">
         <div class="container">
-            <h1>{{ welcome.title }}</h1>
-            <p>{{ welcome.description }}</p>
+          <div
+            class="row justify-content-center align-items-stretch gap-x-32 gap-y-40"
+          >
+            {% for item in homeDataEn.services.list %}
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div
+                class="services-container--list--item-box d-flex flex-column align-items-start h-100 animated rubberBand"
+              >
+                <span class="services-container--list--item-box--icon">
+                  {{ item.icon | safe }}
+                </span>
+                <h2 class="services-container--list--item-box--title">
+                  {{ item.title }}
+                </h2>
+                <p class="services-container--list--item-box--info">
+                  Security testing is a type of software testing that is focused
+                  determining if an information.
+                </p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h1>{{ dataAr.title }}</h1>
-    <h1>{{ dataEn.title }}</h1>
-    <h1>{{ homeDataAr.title }}</h1>
-    
-    
+<section class="testing-section overflow-hidden">
+  <div class="container">
+    <div class="testing-container d-flex flex-column align-items-center">
+      <h1
+        class="testing-container--title d-flex flex-column align-items-center"
+      >
+        <span>{{ homeDataEn.testing.title.part1 }}</span>
+        <span>{{ homeDataEn.testing.title.part2 }}</span>
+      </h1>
+      <p class="testing-container--info animated delay fadeIn">{{ homeDataEn.testing.info }}</p>
+      <div class="row justify-content-center gap-x-159">
+        <div class="col-xl-7 col-12 d-md-block d-none mb-5 mb-xl-0">
+          <div class="testing-container--images-box d-flex mx-auto">
+            <div>
+              <img
+                src="../assets/images/charts/chart1.png"
+                alt="chart"
+                class="testing-container--images-box--secondary"
+              />
+              <img
+                src="../assets/images/charts/chart2.png"
+                alt="chart"
+                class="testing-container--images-box--main"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-6 col-11">
+          <div class="testing-container--list mx-auto animated delay bounceInRight">
+            {% for item in homeDataEn.testing.list %}
+            <div
+              class="testing-container--list--card d-flex justify-content-start align-items-start"
+            >
+              <div>
+                <span
+                  class="testing-container--list--card--icon d-flex justify-content-center align-items-center"
+                  style="background-color: {{ item.iconBackgroud }}; "
+                >
+                  {{ item.icon | safe }}
+                </span>
+              </div>
+
+              <div class="testing-container--list--card--details">
+                <h2 class="testing-container--list--card--details--title">
+                  {{ item.title }}
+                </h2>
+                <p class="testing-container--list--card--details--info">
+                  Many desktop publishing packages and web page editors now use
+                  for them.
+                </p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section position-relative overflow-hidden">
+  <span class="quarter-circle position-absolute">
+    {{ vectors.quarterCircle() }}
+  </span>
+  <span class="right position-absolute"> {{ vectors.right() }} </span>
+
+  <div class="container">
+    <div class="about-container">
+      <div class="row gap-84 justify-content-lg-end justify-content-center">
+        <div class="col-lg-5 col-9">
+          <div
+            class="about-container--images-box d-flex justify-content-xl-end justify-content-center"
+          >
+            <div class="position-relative">
+              <img
+                src="../assets/images/main/image1.png"
+                class="about-container--images-box--main"
+              />
+              <div
+                class="about-container--images-box--video-box position-absolute d-flex justify-content-end"
+              >
+                <div class="position-relative">
+                  <img src="../assets/images/main/image2.png" />
+                  <span class="position-absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="61"
+                      height="62"
+                      viewBox="0 0 61 62"
+                      fill="none"
+                    >
+                      <g filter="url(#filter0_b_1_1295)">
+                        <circle
+                          cx="30.6916"
+                          cy="31.1803"
+                          r="30.2451"
+                          fill="#FEFEFF"
+                        />
+                      </g>
+                      <path
+                        d="M39.9082 30.5538C40.6279 30.9704 40.6268 32.0098 39.9062 32.4247L26.1102 40.37C25.3896 40.785 24.49 40.2643 24.4909 39.4328L24.5081 23.5124C24.509 22.6809 25.4098 22.1622 26.1294 22.5787L39.9082 30.5538Z"
+                        fill="#2B59FF"
+                      />
+                      <defs>
+                        <filter
+                          id="filter0_b_1_1295"
+                          x="-21.1571"
+                          y="-20.6684"
+                          width="103.697"
+                          height="103.697"
+                          filterUnits="userSpaceOnUse"
+                          color-interpolation-filters="sRGB"
+                        >
+                          <feFlood
+                            flood-opacity="0"
+                            result="BackgroundImageFix"
+                          />
+                          <feGaussianBlur
+                            in="BackgroundImageFix"
+                            stdDeviation="10.8018"
+                          />
+                          <feComposite
+                            in2="SourceAlpha"
+                            operator="in"
+                            result="effect1_backgroundBlur_1_1295"
+                          />
+                          <feBlend
+                            mode="normal"
+                            in="SourceGraphic"
+                            in2="effect1_backgroundBlur_1_1295"
+                            result="shape"
+                          />
+                        </filter>
+                      </defs>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="about-container--details d-flex flex-column">
+            <h1 class="about-container--details--title">
+              {{ homeDataEn.about.title }}
+            </h1>
+            <p class="about-container--details--info">
+              {{ homeDataEn.about.info }}
+            </p>
+
+            <div class="about-container--details--information d-flex">
+              {% for item in homeDataEn.about.list %}
+              <div
+                class="about-container--details--information--card d-flex flex-column"
+              >
+                <span class="about-container--details--information--card--title animated bounceInRight"
+                  >{{ item.title }}</span
+                >
+                <span class="about-container--details--information--card--info animated delay fadeIn"
+                  >{{ item.info }}</span
+                >
+              </div>
+              {% endfor %}
+            </div>
+            <div class="about-container--details--btn-box">
+              <a href="#" class="btn"> {{ homeDataEn.about.btn }} </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work-section">
+  <div class="container">
+    <div
+      class="work-container d-flex flex-column justify-content-center align-items-center"
+    >
+      <h1 class="work-container--title">{{ homeDataEn.work.title }}</h1>
+      <p class="work-container--info">{{ homeDataEn.work.info }}</p>
+      <div class="work-container--list overflow-hidden">
+        <div class="row gap-208 mx-auto">
+          {% for item in homeDataEn.work.list %}
+          <div class="col-xl-4 col-12">
+            <div
+              class="work-container--list--card d-flex flex-column justify-content-center align-items-center"
+            >
+              <div
+                class="work-container--list--card--icon-box position-relative animated fadeIn"
+              >
+                <span
+                  class="work-container--list--card--icon-box--icon d-flex justify-content-center align-items-center"
+                  style="background-color: {{ item.backgroundColor }}; "
+                >
+                  {{ item.icon | safe }}
+                </span>
+
+                <span
+                  class="work-container--list--card--icon-box--number position-absolute d-flex justify-content-center align-items-center animated delay bounceInRight"
+                  style="background-color: {{ item.backgroundColor }}; "
+                >
+                  {{ item.number }}
+                </span>
+              </div>
+              <h2 class="work-container--list--card--title text-center">
+                {{ item.title }}
+              </h2>
+              <p class="work-container--list--card--info text-center">
+                Ensuring data accuracy is crucial for making informed decisions
+                and ensuring the reliability.
+              </p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock content %}
