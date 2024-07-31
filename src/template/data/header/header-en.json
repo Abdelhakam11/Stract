@@ -1,0 +1,16 @@
+{
+  "headerDataEn": {
+    "title": {
+      "part1": {
+        "main": "your business,",
+        "marker": "Secure"
+      },
+      "part2": {
+        "main": "Secure your",
+        "marker": "future"
+      }
+    },
+    "info": "Data analysis software is a type of software tool used for data analysis and reporting. It is designed to help businesses, organizations, and individuals process, visualize,",
+    "btn": { "name": "Get Started Free", "link": "#" }
+  }
+}

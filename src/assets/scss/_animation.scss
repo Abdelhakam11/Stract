@@ -11,8 +11,11 @@
 .animated {
   animation-duration: .4s;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
-
+.delay {
+  animation-delay: .4s;
+}
 .animated.infinite {
   animation-iteration-count: infinite;
 }

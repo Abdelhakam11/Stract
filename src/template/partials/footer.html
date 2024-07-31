@@ -1,3 +1,84 @@
 <footer>
-
+  <div class="footer-container">
+    <div class="container">
+      <div class="row justify-content-between gap-lg-0 gap-5">
+        <div class="col-lg-4 col-12">
+          <div class="footer-container--details d-flex flex-column">
+            <img src="../../assets/images/logo.svg" alt="stract-logo" />
+            <p class="footer-container--details--info">
+              Data analysis software is a type of software tool used for data
+              analysis and reporting.
+            </p>
+            <div class="footer-container--details--icons-box d-flex">
+              {% for item in footerDataEn.icons %}
+              <a href="#">
+                <span
+                  class="footer-container--details--icons-box--icon d-flex justify-content-center align-items-center"
+                >
+                  {{ item.icon | safe }}
+                </span>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 col-12">
+          <div class="footer-container--about d-flex flex-wrap">
+            <div class="footer-container--about--list d-flex flex-column">
+              <h2 class="footer-container--about--list--title">
+                {{ footerDataEn.list1.title }}
+              </h2>
+              <div
+                class="footer-container--about--list--items-box d-flex flex-column"
+              >
+                {% for item in footerDataEn.list1.items %}
+                <a
+                  href="#"
+                  class="footer-container--about--list--items-box--item"
+                >
+                  {{ item }}
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="footer-container--about--list d-flex flex-column">
+              <h2 class="footer-container--about--list--title">
+                {{ footerDataEn.list2.title }}
+              </h2>
+              <div
+                class="footer-container--about--list--items-box d-flex flex-column"
+              >
+                {% for item in footerDataEn.list2.items %}
+                <a
+                  href="#"
+                  class="footer-container--about--list--items-box--item"
+                >
+                  {{ item }}
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+            <div
+              class="footer-container--about--subscribe animated bounceInRight"
+            >
+              <h2 class="footer-container--about--subscribe--title">
+                Subscribe to Newsletter
+              </h2>
+              <form class="d-flex flex-wrap">
+                <input type="text" placeholder="Enter email address" />
+                <button type="submit" class="btn">Join</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="copyright-container">
+      <p class="copyright-container--info">
+        © Copyright 2021, All Rights Reserved by stract
+      </p>
+    </div>
+  </div>
 </footer>
