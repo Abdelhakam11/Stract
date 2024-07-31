@@ -1,17 +1,4 @@
 <footer>
-  <div class="container">
-    <div
-      class="contact-container d-flex flex-column align-items-center justify-content-center"
-    >
-      <h1 class="contact-container--title">Ready to Get Started?</h1>
-      <p class="contact-container--info">
-        Data analysis software is a type of software tool used for data analysis
-        and reporting. It is designed to help businesses, organizations.
-      </p>
-      <a href="#" class="btn animated delay fadeIn"> Contact </a>
-    </div>
-  </div>
-
   <div class="footer-container">
     <div class="container">
       <div class="row justify-content-between gap-lg-0 gap-5">
@@ -55,23 +42,25 @@
               </div>
             </div>
             <div class="footer-container--about--list d-flex flex-column">
-                <h2 class="footer-container--about--list--title">
-                  {{ footerDataEn.list2.title }}
-                </h2>
-                <div
-                  class="footer-container--about--list--items-box d-flex flex-column"
+              <h2 class="footer-container--about--list--title">
+                {{ footerDataEn.list2.title }}
+              </h2>
+              <div
+                class="footer-container--about--list--items-box d-flex flex-column"
+              >
+                {% for item in footerDataEn.list2.items %}
+                <a
+                  href="#"
+                  class="footer-container--about--list--items-box--item"
                 >
-                  {% for item in footerDataEn.list2.items %}
-                  <a
-                    href="#"
-                    class="footer-container--about--list--items-box--item"
-                  >
-                    {{ item }}
-                  </a>
-                  {% endfor %}
-                </div>
+                  {{ item }}
+                </a>
+                {% endfor %}
               </div>
-            <div class="footer-container--about--subscribe animated bounceInRight">
+            </div>
+            <div
+              class="footer-container--about--subscribe animated bounceInRight"
+            >
               <h2 class="footer-container--about--subscribe--title">
                 Subscribe to Newsletter
               </h2>

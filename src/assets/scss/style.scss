@@ -18,6 +18,11 @@
 @import "common";
 @import "modules";
 
+
+body {
+  overflow-x: hidden;
+}
+
 .header-container {
   padding-top: 56px;
   background-color: #12141d;
@@ -61,6 +66,12 @@
   }
   &--btn {
     margin-bottom: 80.45px;
+  }
+  &--dashboard-box {
+    img {
+      border-radius: 12.632px;
+      box-shadow: 0px 31.581px 126.323px 0px rgba(0, 0, 0, 0.1);
+    }
   }
 }
 
@@ -119,6 +130,7 @@
       border-radius: 8px;
       border: 1px solid #e3e3e3;
       background: #fafafa;
+      transition: all 0.2s ease-in;
       &--icon {
         padding: 14px;
         border-radius: 50%;
@@ -443,4 +455,65 @@
       transform: translateX(-50%) rotate(90deg);
     }
   }
+}
+
+.contact-section{
+  background: #12141d;
+  position: relative;
+  z-index: 2;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 190px;
+    background: #fff;
+    z-index: -2;
+  }
+  .contact-container {
+  padding: 80px 20px;
+  background-color: $primaryColor;
+  
+  &--title {
+    color: #fff;
+    text-align: center;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    margin-bottom: 18px;
+  }
+  &--info {
+    color: #fafafa;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28.8px;
+    margin-bottom: 48px;
+    max-width: 603px;
+  }
+  .btn {
+    padding: 19px 40px;
+    color: #fafafa;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    border-radius: 50.529px;
+    background: #12141d;
+    box-shadow: 0px 12.632px 50.529px 0px rgba(254, 134, 103, 0.1);
+    margin-bottom: 0;
+    &:hover {
+      color: #12141d;
+      background: #fafafa;
+      border: 1px solid #12141d;
+    }
+  }
+}
 }

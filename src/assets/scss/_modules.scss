@@ -40,66 +40,8 @@ header {
   }
 }
 
-
 footer {
   background: #12141d;
-  position: relative;
-  z-index: 2;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 190px;
-    background: #fff;
-    z-index: -2;
-  }
-  .contact-container {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    background-color: $primaryColor;
-    &--title {
-      color: #fff;
-      text-align: center;
-      font-family: Inter;
-      font-size: 40px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 48px;
-      margin-bottom: 18px;
-    }
-    &--info {
-      color: #fafafa;
-      text-align: center;
-      font-family: Inter;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 28.8px;
-      margin-bottom: 48px;
-      max-width: 603px;
-    }
-    .btn {
-      padding: 19px 40px;
-      color: #fafafa;
-      text-align: center;
-      font-family: Inter;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 18px;
-      border-radius: 50.529px;
-      background: #12141d;
-      box-shadow: 0px 12.632px 50.529px 0px rgba(254, 134, 103, 0.1);
-      margin-bottom: 0;
-      &:hover {
-        color: #12141d;
-        background: #fafafa;
-        border: 1px solid #12141d;
-      }
-    }
-  }
   .footer-container {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -156,6 +98,10 @@ footer {
             font-style: normal;
             font-weight: 400;
             line-height: 14px;
+            transition: all 0.3s ease-in;
+            &:hover{
+              color: $primaryColor;
+            }
           }
         }
       }

@@ -1,10 +1,9 @@
 {% extends "layout.html" %} {% set title = 'Home' %} {% block content %}
-
 <section>
   <div class="header-container overflow-hidden container-fluid">
     <div class="container">
       <div class="d-flex flex-column align-items-center">
-        <h1
+        <h2
           class="header-container--title d-flex flex-column align-items-center"
         >
           <span class="animated swing">
@@ -19,7 +18,7 @@
               >{{headerDataEn.title.part2.marker}}</span
             >
           </span>
-        </h1>
+        </h2>
 
         <p class="header-container--info animated fadeIn">
           {{headerDataEn.info}}
@@ -45,12 +44,13 @@
 <section>
   <div class="container">
     <div class="users-container d-flex flex-column">
-      <h1 class="users-container--title">
-        {{ homeDataEn.users.title.main }}
-        <span class="users-container--title--marker animated delay fadeIn">
-          {{ homeDataEn.users.title.marker }} </span
+      <h2 class="users-container--title">
+        {{ homeDataEn.users.title.main }}<span
+          class="users-container--title--marker animated delay fadeIn"
+        >
+          {{ homeDataEn.users.title.marker}}</span
         >.
-      </h1>
+      </h2>
       <div
         class="users-container--list d-flex justify-content-center align-items-center flex-wrap"
       >
@@ -66,14 +66,14 @@
   <div class="container">
     <div class="services-container d-flex flex-column align-items-center">
       <div class="d-flex flex-column align-items-center">
-        <h1
+        <h2
           class="services-container--title d-flex flex-column align-items-center text-center"
         >
           <span> {{ homeDataEn.services.title.main }} </span>
           <span class="services-container--title--marker animated delay fadeIn">
             {{ homeDataEn.services.title.marker }}
           </span>
-        </h1>
+        </h2>
         <p class="services-container--info text-center">
           {{ homeDataEn.services.info }}
         </p>
@@ -91,9 +91,9 @@
                 <span class="services-container--list--item-box--icon">
                   {{ item.icon | safe }}
                 </span>
-                <h2 class="services-container--list--item-box--title">
+                <h3 class="services-container--list--item-box--title">
                   {{ item.title }}
-                </h2>
+                </h3>
                 <p class="services-container--list--item-box--info">
                   Security testing is a type of software testing that is focused
                   determining if an information.
@@ -111,13 +111,15 @@
 <section class="testing-section overflow-hidden">
   <div class="container">
     <div class="testing-container d-flex flex-column align-items-center">
-      <h1
+      <h2
         class="testing-container--title d-flex flex-column align-items-center"
       >
         <span>{{ homeDataEn.testing.title.part1 }}</span>
         <span>{{ homeDataEn.testing.title.part2 }}</span>
-      </h1>
-      <p class="testing-container--info animated delay fadeIn">{{ homeDataEn.testing.info }}</p>
+      </h2>
+      <p class="testing-container--info animated delay fadeIn">
+        {{ homeDataEn.testing.info }}
+      </p>
       <div class="row justify-content-center gap-x-159">
         <div class="col-xl-7 col-12 d-md-block d-none mb-5 mb-xl-0">
           <div class="testing-container--images-box d-flex mx-auto">
@@ -136,7 +138,9 @@
           </div>
         </div>
         <div class="col-xl-5 col-lg-6 col-11">
-          <div class="testing-container--list mx-auto animated delay bounceInRight">
+          <div
+            class="testing-container--list mx-auto animated delay bounceInRight"
+          >
             {% for item in homeDataEn.testing.list %}
             <div
               class="testing-container--list--card d-flex justify-content-start align-items-start"
@@ -151,9 +155,9 @@
               </div>
 
               <div class="testing-container--list--card--details">
-                <h2 class="testing-container--list--card--details--title">
+                <h3 class="testing-container--list--card--details--title">
                   {{ item.title }}
-                </h2>
+                </h3>
                 <p class="testing-container--list--card--details--info">
                   Many desktop publishing packages and web page editors now use
                   for them.
@@ -192,57 +196,10 @@
                 <div class="position-relative">
                   <img src="../assets/images/main/image2.png" />
                   <span class="position-absolute">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="61"
-                      height="62"
-                      viewBox="0 0 61 62"
-                      fill="none"
-                    >
-                      <g filter="url(#filter0_b_1_1295)">
-                        <circle
-                          cx="30.6916"
-                          cy="31.1803"
-                          r="30.2451"
-                          fill="#FEFEFF"
-                        />
-                      </g>
-                      <path
-                        d="M39.9082 30.5538C40.6279 30.9704 40.6268 32.0098 39.9062 32.4247L26.1102 40.37C25.3896 40.785 24.49 40.2643 24.4909 39.4328L24.5081 23.5124C24.509 22.6809 25.4098 22.1622 26.1294 22.5787L39.9082 30.5538Z"
-                        fill="#2B59FF"
-                      />
-                      <defs>
-                        <filter
-                          id="filter0_b_1_1295"
-                          x="-21.1571"
-                          y="-20.6684"
-                          width="103.697"
-                          height="103.697"
-                          filterUnits="userSpaceOnUse"
-                          color-interpolation-filters="sRGB"
-                        >
-                          <feFlood
-                            flood-opacity="0"
-                            result="BackgroundImageFix"
-                          />
-                          <feGaussianBlur
-                            in="BackgroundImageFix"
-                            stdDeviation="10.8018"
-                          />
-                          <feComposite
-                            in2="SourceAlpha"
-                            operator="in"
-                            result="effect1_backgroundBlur_1_1295"
-                          />
-                          <feBlend
-                            mode="normal"
-                            in="SourceGraphic"
-                            in2="effect1_backgroundBlur_1_1295"
-                            result="shape"
-                          />
-                        </filter>
-                      </defs>
-                    </svg>
+                    <img
+                      src="../assets/images/main/video-button.png"
+                      alt="play"
+                    />
                   </span>
                 </div>
               </div>
@@ -251,9 +208,9 @@
         </div>
         <div class="col-md-6 col-12">
           <div class="about-container--details d-flex flex-column">
-            <h1 class="about-container--details--title">
+            <h2 class="about-container--details--title">
               {{ homeDataEn.about.title }}
-            </h1>
+            </h2>
             <p class="about-container--details--info">
               {{ homeDataEn.about.info }}
             </p>
@@ -263,10 +220,12 @@
               <div
                 class="about-container--details--information--card d-flex flex-column"
               >
-                <span class="about-container--details--information--card--title animated bounceInRight"
+                <span
+                  class="about-container--details--information--card--title animated bounceInRight"
                   >{{ item.title }}</span
                 >
-                <span class="about-container--details--information--card--info animated delay fadeIn"
+                <span
+                  class="about-container--details--information--card--info animated delay fadeIn"
                   >{{ item.info }}</span
                 >
               </div>
@@ -287,10 +246,10 @@
     <div
       class="work-container d-flex flex-column justify-content-center align-items-center"
     >
-      <h1 class="work-container--title">{{ homeDataEn.work.title }}</h1>
+      <h2 class="work-container--title">{{ homeDataEn.work.title }}</h2>
       <p class="work-container--info">{{ homeDataEn.work.info }}</p>
       <div class="work-container--list overflow-hidden">
-        <div class="row gap-208 mx-auto">
+        <div class="row gap-208">
           {% for item in homeDataEn.work.list %}
           <div class="col-xl-4 col-12">
             <div
@@ -313,9 +272,9 @@
                   {{ item.number }}
                 </span>
               </div>
-              <h2 class="work-container--list--card--title text-center">
+              <h3 class="work-container--list--card--title text-center">
                 {{ item.title }}
-              </h2>
+              </h3>
               <p class="work-container--list--card--info text-center">
                 Ensuring data accuracy is crucial for making informed decisions
                 and ensuring the reliability.
@@ -328,5 +287,18 @@
     </div>
   </div>
 </section>
-
+<section class="contact-section">
+  <div class="container">
+    <div
+      class="contact-container d-flex flex-column align-items-center justify-content-center"
+    >
+      <h2 class="contact-container--title">Ready to Get Started?</h2>
+      <p class="contact-container--info">
+        Data analysis software is a type of software tool used for data analysis
+        and reporting. It is designed to help businesses, organizations.
+      </p>
+      <a href="#" class="btn animated delay fadeIn"> Contact us </a>
+    </div>
+  </div>
+</section>
 {% endblock content %}
